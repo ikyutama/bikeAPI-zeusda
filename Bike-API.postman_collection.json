@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "0efd469d-4cb2-4c70-98bc-a059e732fd26",
+		"name": "Bike-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "681931"
+	},
+	"item": [
+		{
+			"name": "trips",
+			"item": [
+				{
+					"name": "get avg trip duration in minutes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "acce",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseurl}}/trips/avg_duration",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"trips",
+								"avg_duration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get average trip duration by bike_id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/trips/avg_duration/894",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"trips",
+								"avg_duration",
+								"894"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/trips/?take=1&skip=0",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"trips",
+								""
+							],
+							"query": [
+								{
+									"key": "take",
+									"value": "1"
+								},
+								{
+									"key": "skip",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "stations",
+			"item": [
+				{
+					"name": "all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseurl}}/stations/",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"stations",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "total bike",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"station_id\" : 2538,\n    \"start_or_end\" : \"start\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseurl}}/stations/totalbike",
+							"host": [
+								"{{baseurl}}"
+							],
+							"path": [
+								"stations",
+								"totalbike"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
